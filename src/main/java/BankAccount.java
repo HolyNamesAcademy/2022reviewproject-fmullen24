@@ -11,8 +11,8 @@ public class BankAccount {
      */
     public BankAccount(String in_name, double in_accountBalance)
     {
-        in_name = name;
-        in_accountBalance = accountBalance;
+       name = in_name;
+       accountBalance = in_accountBalance;
     }
 
     /**
