@@ -10,9 +10,8 @@ public class BankAccount {
      * @param in_accountBalance The starting balance for the account.
      */    public BankAccount(String in_name, double in_accountBalance)
     {
-
-        // write your code above and remove the line below
-        throw new UnsupportedOperationException();
+        in_name = name;
+        in_accountBalance = accountBalance;
     }
 
     /**
@@ -20,9 +19,7 @@ public class BankAccount {
      */
     public String GetName()
     {
-
-        // write your code above and remove the line below
-        throw new UnsupportedOperationException();
+    return name;
     }
 
     /**
@@ -30,9 +27,7 @@ public class BankAccount {
      */
     public double GetBalance()
     {
-
-        // write your code above and remove the line below
-        throw new UnsupportedOperationException();
+    return accountBalance;
     }
 
     /**
@@ -45,14 +40,16 @@ public class BankAccount {
      * @param amount The amount to deposit into the account. Must be a positive number.
      * @return The amount deposited into the account. If no money could be deposited due to an error, return zero.
      */
-    public double Deposit(double amount)
-    {
-
-        // write your code above and remove the line below
-        throw new UnsupportedOperationException();
-    }
-
-    /**
+    public double Deposit(double amount) {
+        if (amount > 0) {
+            accountBalance += amount;
+        return amount;}
+        else{
+                System.out.println("Sorry, the amount deposited must be greater than 0.");
+                return 0;
+            }
+        }
+        /**
      * Withdraws money from the account. The user must withdraw a positive amount of money,
      * AND the user cannot withdraw more money than the current account balance, i.e. the user
      * cannot withdraw more money than they have. One of the following error messages is displayed
@@ -67,7 +64,20 @@ public class BankAccount {
      */
     public double Withdraw(double amount)
     {
+    if( amount>0&&amount<accountBalance){
+        accountBalance-=amount;
+        return amount;
+    }
+    else if(amount<0|| amount ==0){
+        System.out.println("Sorry, the amount withdrawn must be greater than 0.");
+        return 0;
+    }
+    else {
+      System.out.println("Sorry, you cannot withdraw more than the account balance.");
+      return 0;
+    }
 
+    }
         // write your code above and remove the line below
         throw new UnsupportedOperationException();
     }
