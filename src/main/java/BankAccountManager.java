@@ -15,8 +15,7 @@ public class BankAccountManager {
 
         // Initialize Bank Account
         BankAccount bankAccount = new BankAccount(customerName, accountBalance);
-        while (true)
-        {
+        while (true) {
             // Give user the options and ask for a command
             System.out.println("List of Possible Commands:");
             System.out.println("Balance");
@@ -28,8 +27,7 @@ public class BankAccountManager {
 
             // Read the command and process it
             String command = input.next().toLowerCase();
-            switch (command)
-            {
+            switch (command) {
                 case "balance":
                     // Do nothing, the balance will get printed at the end anyway
                     break;
@@ -61,17 +59,15 @@ public class BankAccountManager {
 
     /**
      * Returns a string representation of a BankAccount object. The string looks like this:
-     * 
-     *      Name: Serena Williams
-     *      Account Balance: 1000000.00
-     * 
+     * <p>
+     * Name: Serena Williams
+     * Account Balance: 1000000.00
+     *
      * @return String
      */
-    public static void PrintAccountInfo(BankAccount account)
-    {
-    String s = "";
-    s+=
-        // write your code above and remove the line below
-        throw new UnsupportedOperationException();
+    public static String PrintAccountInfo(BankAccount account) {
+        String n = account.toString();
+        return n;
+
     }
 }

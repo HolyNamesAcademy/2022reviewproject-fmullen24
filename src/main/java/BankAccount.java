@@ -28,7 +28,7 @@ public class BankAccount {
      */
     public double GetBalance()
     {
-    return accountBalance;
+        return accountBalance;
     }
 
     /**
