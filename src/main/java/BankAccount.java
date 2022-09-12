@@ -94,9 +94,10 @@ public class BankAccount {
      */
     public double AddInterest(int numYears, double interestRate)
     {
-    double interest = 0;
+    double interest =0;
     if(numYears>0&& interestRate>0) {
         interest += (numYears * accountBalance * interestRate);
+        accountBalance += interest;
         return interest;
     }
     else if (numYears<0){
