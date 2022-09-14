@@ -172,11 +172,11 @@ String numberList = "";
      * @return List of Student objects.
      */
     public static ArrayList<Student> CreateStudentArray(ArrayList<String> names, ArrayList<Integer> heights, ArrayList<Integer> gradeLevels, ArrayList<String> favoriteColors, ArrayList<BankAccount> bankAccounts) {
-        for (int i = 0; i < students.size() - 1; i++) {
-            if (students.get(i).GetName().equals(name)) {
-                return students.get(i).GetFavoriteColor();
-            }
-        }
+       ArrayList<Student> students = new ArrayList<Student>();
+       for (int i =0;i<names.size();i++){
+           Student x = new Student (names.get(i),heights.get(i),gradeLevels.get(i),favoriteColors.get(i), bankAccounts.get(i));
+         students.add(x);}
+       return students;
     }
 
     /**
@@ -193,8 +193,12 @@ String numberList = "";
      */
     public static String GetTeamsString(ArrayList<ArrayList<Student>> teams) {
 
-        // write your code above and remove the line below
-        throw new UnsupportedOperationException();
+       String str = "";
+       for (int r =0;r<teams.size();r++){
+           for (int c=0;c<r;c++){
+               str+= "Team" + (r+1) + teams(.get())
+           }
+
     }
 
     /**
