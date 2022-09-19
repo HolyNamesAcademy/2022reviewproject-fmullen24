@@ -49,7 +49,7 @@ public class ArrayListPractice {
      */
     public static int GetSum(ArrayList<Integer> numbers) {
         int j = 0;
-        for (int i = 0; i < numbers.size()-1; i++)
+        for (int i = 0; i < numbers.size(); i++)
             j += numbers.get(i);
         return j;
     }
@@ -104,7 +104,7 @@ String numberList = "";
     public static ArrayList<Integer> CreateNumberArray(int first, int last) {
 
         ArrayList<Integer> y = new ArrayList<Integer>();
-        for (int i = 0; i<last; i++){
+        for (int i = first; i<last; i++){
             y.add(i);
         }
         return y;
@@ -194,11 +194,21 @@ String numberList = "";
     public static String GetTeamsString(ArrayList<ArrayList<Student>> teams) {
 
        String str = "";
-       for (int r =0;r<teams.size();r++){
-           for (int c=0;c<r;c++){
-               str+= "Team" + (r+1) + teams(.get())
+       String str2= new String();
+       int i = 0;
+       for (ArrayList<Student> a: teams){
+           str+= "Team "+ (i+1)+ ": ";
+           i++;
+             for(Student b : a)  {
+                 str+= b.GetName()+ ", "+ "\n";
+                 if(str.indexOf(",", str.length()-1)!=-1){
+                     str2 = str.substring(0,str.length()-1);
+                 }
+             }
            }
-
+       if(str2.length()>0)
+        return str2;
+       return str;
     }
 
     /**
