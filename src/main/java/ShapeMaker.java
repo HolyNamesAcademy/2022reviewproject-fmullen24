@@ -14,9 +14,14 @@ public class ShapeMaker {
      */
     public static String PrintSquare(int size)
     {
+    String str = "";
+  for (int i = size;i>0;i--){
+      str+="*";
 
-
-        return "";
+  for (int j = size;j>1;j--){
+      str+= "\n" + str+"\n";
+  }}
+        return str;
     }
 
     /**
@@ -32,10 +37,18 @@ public class ShapeMaker {
      * @return a string that looks like the shape above when printed
      */
     public static String PrintRectangle(int length, int height)
-    {
-        // write your code here
-        return "";
-    }
+
+        {
+            String str = "";
+            for (int i = length;i>0;i--){
+                str+="*";
+            }
+            for (int i = height;i>1;i--){
+                str+= "\n" + str+"\n";
+            }
+            return str;
+        }
+
 
     /**
      * Returns a string that looks like a right triangle with sides of size "size". If size = 5, the triangle looks like this:
@@ -51,8 +64,7 @@ public class ShapeMaker {
      */
     public static String PrintRightTriangle(int height)
     {
-        // write your code here
-        return "";
+        return " ";
     }
 
     /**

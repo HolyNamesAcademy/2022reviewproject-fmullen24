@@ -274,7 +274,8 @@ public class ArrayListPractice {
             }
             return false;
         }
-
+        return true;
+    }
         /**
          * EXTRA CREDIT:
          * Increments everyone's grade level by one. If a student is in 12th grade, remove them from the array.
@@ -306,4 +307,4 @@ public class ArrayListPractice {
             throw new UnsupportedOperationException();
         }
     }
-}
+
