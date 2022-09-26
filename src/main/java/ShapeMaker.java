@@ -2,70 +2,74 @@
 public class ShapeMaker {
     /**
      * Returns a string that looks like a square with sides of size "size". If size = 5, the square looks like this:
-     * 
-     *     * * * * *
-     *     * * * * *
-     *     * * * * *
-     *     * * * * *
-     *     * * * * *
+     * <p>
+     * * * * * *
+     * * * * * *
+     * * * * * *
+     * * * * * *
+     * * * * * *
      *
      * @param size length of side
      * @return a string that looks like the shape above when printed
      */
-    public static String PrintSquare(int size)
-    {
-    String str = "";
-  for (int i = size;i>0;i--){
-      str+="*";
-
-  for (int j = size;j>1;j--){
-      str+= "\n" + str+"\n";
-  }}
+    public static String PrintSquare(int size) {
+        String str = "";
+        for (int o = size; o > 0; o--) {
+            for (int i = size; i > 0; i--) {
+                str += "*" + " ";
+            }
+            str += "\n";
+        }
         return str;
     }
 
     /**
      * Returns a string that looks like a rectangle with sides of size "length" and "width. If length = 5, width = 4 the rectangle looks like this:
-     * 
-     *     * * * * *
-     *     * * * * *
-     *     * * * * *
-     *     * * * * *
+     * <p>
+     * * * * * *
+     * * * * * *
+     * * * * * *
+     * * * * * *
      *
      * @param length the width of the rectangle
      * @param height the height of the rectangle
      * @return a string that looks like the shape above when printed
      */
-    public static String PrintRectangle(int length, int height)
-
-        {
-            String str = "";
-            for (int i = length;i>0;i--){
-                str+="*";
+    public static String PrintRectangle(int length, int height) {
+        String str = "";
+        for (int o = height; o > 0; o--) {
+            for (int i = length; i > 0; i--) {
+                str += "*" + " ";
             }
-            for (int i = height;i>1;i--){
-                str+= "\n" + str+"\n";
-            }
-            return str;
+            str += "\n";
         }
+        return str;
+    }
 
 
     /**
      * Returns a string that looks like a right triangle with sides of size "size". If size = 5, the triangle looks like this:
-     * 
-     *     *
-     *     * *
-     *     * * *
-     *     * * * *
-     *     * * * * *
+     * <p>
+     * *
+     * * *
+     * * * *
+     * * * * *
+     * * * * * *
      *
      * @param height the height of the triangle
      * @return a string that looks like the shape above when printed
      */
-    public static String PrintRightTriangle(int height)
-    {
-        return " ";
-    }
+    public static String PrintRightTriangle(int height) {
+        String str = "";
+        for (int o = height; o > 0; o--) {
+            int c = o;
+           for (int i= (c-1);i<height;i++){
+                str+="*" + " ";
+            }
+            str += "\n";
+        }
+        return str;
+}
 
     /**
      * Returns a string that looks like an inverted right triangle with sides of size "size". If size = 5, the triangle looks like this:
@@ -81,8 +85,15 @@ public class ShapeMaker {
      */
     public static String PrintInvertedRightTriangle(int height)
     {
-        // write your code here
-        return "";
+        String str = "";
+        for (int o = height; o > 0; o--) {
+            int c = o;
+            for (int i= (c-1);i<height;i++){
+                str+="*" + " ";
+            }
+            str += "\n";
+        }
+        return str;
     }
 
     /**
