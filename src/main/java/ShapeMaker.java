@@ -109,7 +109,26 @@ public class ShapeMaker {
      * @return a string that looks like the shape above when printed
      */
 
-    public static String PrintBackwardsRightTriangle(int height) {
+    public static String PrintBackwardsRightTriangle(int height)
+        {
+            {
+                String str = "";
+                for (int o = height; o > 0; o--) {
+                    int c = o;
+                    for (int m = o-1; m>0;m--){
+                        str+=" ";
+                    }
+                    for (int j= (c-1);j<height;j++){
+                        for(int f = height)
+                        str+="*" + " ";
+                    }
+                    str += "\n";
+                }
+                return str;
+            }
+        }
+
+        /**
         String str = "";
         for (int o = height; o > 0; o--) {
             for (int m = o-1; m>0;m--) {
@@ -121,7 +140,7 @@ public class ShapeMaker {
             str += "\n";
     }
     return str; }
-/**
+
             for (int o = height; o > 0; o--) {
             for (int m = o-1; m>0;m--){
                 str+=" ";
