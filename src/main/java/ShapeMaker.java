@@ -124,7 +124,7 @@ public class ShapeMaker {
                 str += "\n";
             }
             return str;
-    }
+    }}
         /**
         {
             String str = "";
@@ -177,7 +177,7 @@ public class ShapeMaker {
      *
      * @param height the height of the triangle
      * @return a string that looks like the shape above when printed
-     */
+
     public static String PrintEquilateralTriangle(int height)
     {
         {
@@ -196,4 +196,4 @@ public class ShapeMaker {
             return str;
         }
     }
-}
+}*/
