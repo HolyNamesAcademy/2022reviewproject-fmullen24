@@ -150,13 +150,16 @@ public class ArrayListPractice {
      * @return The tallest student in the list.
      */
     public static Student GetTallestStudent(ArrayList<Student> students) {
-        for (int i = 0; i < students.size() - 1; i++) {
-            int height = 0;
-            if (students.get(i).GetHeight() > height) {
+        int height = 0;
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).GetHeight() >= height) {
                 height = students.get(i).GetHeight();
-                return students.get(i);
-            }
-        }
+            }}
+        for (int j = 0; j < students.size(); j++) {
+            if (students.get(j).GetHeight() == height) {
+                return students.get(j);
+            }}
+
         return students.get(0);
     }
 
@@ -258,21 +261,21 @@ public class ArrayListPractice {
      * had sufficient funds in their account. Otherwise, false.
      */
     public static boolean TransferMoney(ArrayList<Student> students, String fromStudentName, String toStudentName, double amount) {
-        int n = 0;
-        for (int j = 0; j < students.size() - 1; j++) {
-            if (students.get(j).GetName().equals(toStudentName)) {
-                n = j;
-            }
-        }
-        for (int i = 0; i < students.size() - 1; i++) {
-            if (students.get(i).GetName().equals(fromStudentName)) {
-                if (students.get(i).GetBankAccount().GetBalance() > amount || students.get(i).GetBankAccount().GetBalance() == amount) {
-                    students.get(i).GetBankAccount().Withdraw(amount);
-                    students.get(n).GetBankAccount().Deposit(amount);
+
+        for (Student student : students) {
+            if (student.GetName().equals(fromStudentName)) {
+                if (student.GetBankAccount().GetBalance() > amount|| student.GetBankAccount().GetBalance()==amount)
+                {
+                    student.GetBankAccount().Withdraw(amount);
                     return true;
                 }
-            }
-            return false;
+                for (Student s : students) {
+                    if (s.GetName().equals(toStudentName)) {
+                        s.GetBankAccount().Deposit(amount);
+                    }
+            }}
+            else{
+            return false;}
         }
         return true;
     }
@@ -303,8 +306,33 @@ public class ArrayListPractice {
          */
         public static void SortByGradeAndName (ArrayList<Student> students) {
 
-            // write your code above and remove the line below
-            throw new UnsupportedOperationException();
+            ArrayList<Student> temp = new ArrayList<Student>();
+            for (int i = students.size();i>0;i--){
+                if(students.get(i).GetGradeLevel()==9){
+                    temp.add(students.get(i));
+                }
+            }
+            for (int j = students.size();j>0;j--){
+                if(students.get(j).GetGradeLevel()==10){
+                    temp.add(students.get(j));
+                }
+            }
+            for (int k = students.size();k>0;k--){
+                if(students.get(k).GetGradeLevel()==11){
+                    temp.add(students.get(k));
+                }
+            }
+            for (int f = students.size();f>0;f--){
+                if(students.get(f).GetGradeLevel()==9){
+                    temp.add(students.get(f));
+                }
+            }
+            for (int l = students.size();l>0;l--){
+                students.remove(l);
+            }
+            for (int m =0;m<temp.size();m++){
+               students.add(temp.get(m));
+            }
         }
     }
 
