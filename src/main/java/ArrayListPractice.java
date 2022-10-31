@@ -261,24 +261,45 @@ public class ArrayListPractice {
      * had sufficient funds in their account. Otherwise, false.
      */
     public static boolean TransferMoney(ArrayList<Student> students, String fromStudentName, String toStudentName, double amount) {
-
+        boolean hasStudent1 = false;
+        boolean hasStudent2 = false;
         for (Student student : students) {
             if (student.GetName().equals(fromStudentName)) {
-                if (student.GetBankAccount().GetBalance() > amount|| student.GetBankAccount().GetBalance()==amount)
-                {
-                    student.GetBankAccount().Withdraw(amount);
-                    return true;
-                }
-                for (Student s : students) {
-                    if (s.GetName().equals(toStudentName)) {
-                        s.GetBankAccount().Deposit(amount);
-                    }
-            }}
-            else{
-            return false;}
+                hasStudent1 = true;
+            }
         }
-        return true;
+        for (Student s : students) {
+            if (s.GetName().equals(fromStudentName)) {
+                hasStudent2 = true;
+            }
+        }
+        if (hasStudent1 && hasStudent2) {
+            for (Student a : students) {
+                if (a.GetName().equals(toStudentName)) {
+                    if (a.GetBankAccount().GetBalance() > amount || a.GetBankAccount().GetBalance() == amount) {
+                        a.GetBankAccount().Withdraw(amount);
+                        for (Student j : students) {
+                            if (j.GetName().equals(fromStudentName)) {
+                                j.GetBankAccount().Deposit(amount);
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        return false;
+
     }
+
+
+
+
+
+
+
+
         /**
          * EXTRA CREDIT:
          * Increments everyone's grade level by one. If a student is in 12th grade, remove them from the array.
